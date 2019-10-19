@@ -1,0 +1,354 @@
+:root {
+  --primary: rgb(86, 86, 90);
+  --primary-light: rgba(86, 86, 90, 0.2);
+  --primary-dark: rgb(52, 52, 58);
+
+  --accent: rgb(232, 119, 34);
+  --accent-light: rgba(232, 119, 34, 0.6);
+  --accent-dark: rgb(212, 103, 21);
+
+  --bg-color: white;
+  --bg-body: rgba(86, 86, 90, 0.2);
+  --foreground: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="dark"] {
+  --primary: rgb(86, 86, 90);
+  --primary-light: rgba(86, 86, 90, 0.5);
+  --primary-dark: rgb(52, 52, 58);
+
+  --accent: rgb(232, 119, 34);
+  --accent-light: rgba(232, 119, 34, 0.6);
+  --accent-dark: rgb(212, 103, 21);
+
+  --bg-color: rgb(0, 0, 0);
+  --bg-body: rgba(0, 0, 0, 0.9);
+  --foreground: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-body);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--foreground);
+  position: relative;
+}
+
+ul li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+
+  &:hover{
+      text-decoration: underline;
+  }
+}
+
+main {
+  margin: 10px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.profile {
+  background-color: var(--bg-color);
+  border-radius: 10px;
+
+  &__image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .image {
+      border: 2px solid var(--accent);
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+    }
+
+    .social-icons {
+      margin-top: 7px;
+      ul {
+        display: flex;
+        width: 100px;
+        justify-content: space-between;
+        align-items: center;
+
+        li .icon {
+          color: var(--accent);
+          font-size: 24px;
+
+          &:hover {
+            transform: scale(1.35);
+            transition: 0.5s all ease;
+          }
+        }
+      }
+    }
+  }
+
+  &__details-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+
+    .name {
+      color: var(--foreground);
+      font-size: 32px;
+      text-align: center;
+    }
+    .email {
+      color: var(--primary);
+      font-style: italic;
+    }
+    .divder {
+      margin: 10px 0;
+      width: 100px;
+      height: 2px;
+      background-color: var(--accent-light);
+    }
+    .occupation {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .about-me {
+      margin-top: 5px;
+      padding: 10px;
+      border: 2px solid var(--accent-light);
+      border-radius: 5px;
+      max-width: 800px;
+    }
+  }
+}
+
+.section-office {
+  margin: 10px 0;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .name {
+    font-size: 28px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    width: 100%;
+    border-bottom: 2px solid var(--accent);
+  }
+}
+.work-details {
+  margin: 10px 0;
+  margin-bottom: 5px;
+  text-align: center;
+
+  .image {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+
+  .about {
+    background-color: var(--primary-light);
+    padding: 10px;
+    text-align: left;
+    border-radius: 5px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  .other-info {
+    margin: 30px 10px;
+
+    .section1,
+    .section2 {
+      padding: 10px;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+    color: var(--primary);
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  a.tel {
+    color: var(--accent-dark);
+    font-size: 20px;
+  }
+}
+
+.office-location {
+  margin-top: 2px;
+  width: 100%;
+  h4 {
+    font-size: 25px;
+    text-align: center;
+    color: var(--primary-dark);
+  }
+
+  .divider {
+    border-bottom: 2px solid var(--accent-light);
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .section {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 18px;
+    text-align: center;
+
+    a {
+      color: var(--primary-dark);
+    }
+
+    .street a {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .street .icon {
+      font-size: 22px;
+    }
+  }
+}
+
+/*slider switch css */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 14px;
+  top: 4px;
+
+  em {
+    font-size: 12px;
+    position: fixed;
+    right: 14px;
+    top: 39px;
+    width: 58px;
+  }
+}
+.theme-switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 42px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 16px;
+}
+
+input:checked + .slider {
+  background-color: var(--accent);
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image-section {
+      padding: 10px;
+    }
+
+    &__details-section {
+      padding: 10px 20px;
+    }
+  }
+
+  .section-office {
+    .work-details .other-info {
+      display: flex;
+    }
+
+    .office-location .sections {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 10px;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
