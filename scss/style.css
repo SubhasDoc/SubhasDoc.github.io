@@ -311,10 +311,7 @@ main {
 
 .theme-switch-wrapper em {
   font-size: 12px;
-  position: fixed;
-  right: 14px;
-  top: 39px;
-  width: 58px;
+  padding-right: 3px;
 }
 
 .theme-switch {
